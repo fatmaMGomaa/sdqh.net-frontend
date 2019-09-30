@@ -1,10 +1,11 @@
 const token = getLocalStorageItem("token");
-const baseURL = "file:///home/fgomaa/Desktop/sdqh/frontend";
+const baseURL = "https://sdqh-net.netlify.com";
+const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 let cases = [];
 var map, infoWindow;
 
 axios
-    .get("http://localhost:8080/allCases?caseType=human", {
+    .get(`${backendURL}allCases?caseType=human`, {
         headers: {
             Authorization: `bearer ${token}`
         }

@@ -1,7 +1,8 @@
 const userLocation = getLocalStorageItem("location");
 const user = getLocalStorageItem("user");
 const token = getLocalStorageItem("token");
-const baseURL = "file:///home/fgomaa/Desktop/sdqh/frontend";
+const baseURL = "https://sdqh-net.netlify.com";
+const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 
 if (!user || !token) {
     alert("you have to log in first")
@@ -46,7 +47,7 @@ form.addEventListener("submit", (e) => {
     }
 
     axios
-        .post("http://localhost:8080/addCase?caseType=human", data, {
+        .post(`${backendURL}addCase?caseType=human`, data, {
             headers: {
                 accept: "application/json",
                 "Accept-Language": "en-US,en;q=0.8",

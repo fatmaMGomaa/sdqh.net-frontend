@@ -4,10 +4,12 @@ const caseType = getLocalStorageItem("caseType");
 const user = getLocalStorageItem("user");
 
 let theCase, comments;
-const baseURL = "file:///home/fgomaa/Desktop/sdqh/frontend";
+const baseURL = "https://sdqh-net.netlify.com";
+const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
+
 const container = document.querySelector('.container');
 axios
-    .get(`http://localhost:8080/singleCase/${caseId}?caseType=${caseType}`, {
+    .get(`${backendURL}singleCase/${caseId}?caseType=${caseType}`, {
         headers: {
             Authorization: `bearer ${token}`
         }
@@ -19,7 +21,7 @@ axios
         if (!theCase) {
             container.innerHTML = "<h1>لا يوجد حالة لعرضها</h1>"
         } else {
-            let imagePath = `http://localhost:8080/${theCase.image}`;
+            let imagePath = `${backendURL}${theCase.image}`;
             if (theCase["phone"] === "" || theCase["phone"]=== " "){
                 theCase["phone"] = "لا يوجد"
             }
@@ -74,7 +76,7 @@ axios
                     data.append("userId", user.id);
                     data.append("caseType", caseType);
                     data.append("caseId", caseId);
-                    axios.post("http://localhost:8080/addComment", data, {
+                    axios.post(backendURL+"addComment", data, {
                         headers: {
                             accept: "application/json",
                             "Accept-Language": "en-US,en;q=0.8",
@@ -97,7 +99,7 @@ axios
                 const caseComments = document.querySelector('#other-comments')
                 let commentImage;
                 for (var i = 0; i < comments.length; i++){
-                    commentImage = `http://localhost:8080/${comments[i]['user']['image']}`;
+                    commentImage = `${backendURL}${comments[i]['user']['image']}`;
                     console.log(commentImage)
                     var commentDiv = document.createElement("div");
                     commentDiv.className = "single-comment";
@@ -117,6 +119,6 @@ axios
     })
     .catch(error => {
         console.log(error);
-        alert(error.response.message)
+        alert(error.response.data.message)
     });
 

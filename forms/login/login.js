@@ -1,4 +1,5 @@
-const baseURL = "file:///home/fgomaa/Desktop/sdqh/frontend"
+const baseURL = "https://sdqh-net.netlify.com";
+const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 const form = document.getElementById('login')
 let data;
 
@@ -7,7 +8,7 @@ form.addEventListener("submit", (e) => {
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    axios.post("http://localhost:8080/login", {
+    axios.post(`${backendURL}login`, {
         email,
         password
     })
