@@ -1,0 +1,103 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.main__header a{
+    color: white;
+}
+.intro{
+    background: url(cover.jpg) no-repeat 50% 50%;
+    top: 0;
+    background-size: cover;
+}
+.intro .inner, .intro{
+    height: 100%;
+    width: 100%;
+}
+.intro .inner {
+    max-width: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.content {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 16%;
+    font-family: 'Aref Ruqaa', serif;
+}
+.content h1 {
+    font-size: 800%;
+    font-weight: 100;
+    color: white;
+    line-height: 70%;
+    margin: 80px 0;
+}
+.content span {
+    font-weight: bold;
+}
+.btn {
+    font-size: 200%;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: solid 2px lightgrey;
+    border-radius: 9px;
+    text-transform: uppercase;
+}
+.content a+a {
+    margin-right: 50px;
+}
+.main__header__li + .main__header__li {
+    border-right: 2px solid white;
+}
+.fas .fa-sign-in-alt, .fas .fa-user-plus{
+    color: white;
+}
+.btn:hover {
+    color: lightgrey;
+    border: solid lightgrey 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-in-out;
+    transform: scale(1.5);
+    box-shadow: 0 0 30px white;
+}
+/*--- Media Queries --*/
+@media screen and (max-width: 900px) {
+    .content {
+       margin-top: 39%;
+    }
+    .content h1 {
+        font-size: 550%;
+        margin: 50px 0;
+    }
+    .btn {
+        padding: 7px 15px;
+        font-size: 150%;
+    }
+    .content a+a {
+    margin-right: 20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .content {
+        width: 300px;
+        margin-top: 50%;
+    }
+    .content h1 {
+        font-size: 400%;
+    }
+    .btn {
+        padding: 7px 15px;
+        font-size: 110%;
+    }
+    .main__header{
+        justify-content: space-between;
+    }
+    .main__header__h1 {
+        margin: 5px 0 0;
+        width: auto;
+    }
+}
