@@ -15,14 +15,14 @@ axios
         if (cases.length === 0) {
             container.innerHTML = "<h2>لا يوجد حالات لعرضها</h2>"
         } else {
-            let imagePath;
+            // let imagePath;
             for (var i = 0; i < cases.length; i++) {
-                imagePath = `${backendURL}${cases[i]["image"]}`
+                // imagePath = `${backendURL}${cases[i]["image"]}`
                 var div = document.createElement("div");
                 div.className = "content";
                 div.innerHTML =
                     `<div class="right">
-                        <img src=${imagePath} alt=${cases[i]["species"]} />
+                        <img src=${cases[i]["image"]} alt=${cases[i]["species"]} />
                     </div>
                     <div class="left">
                         <div class="top">

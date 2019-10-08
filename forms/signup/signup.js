@@ -15,6 +15,7 @@ form.addEventListener("submit",(e)=>{
     const password = document.getElementById('password').value
     const gender = document.getElementById('gender').value
     const birthDate = document.getElementById('birthdate').value
+    const image = document.getElementById('image').value
     
     let data = new FormData();
     data.append("firstName", firstName);
@@ -23,9 +24,10 @@ form.addEventListener("submit",(e)=>{
     data.append("password", password);
     data.append("birthDate", birthDate);
     data.append("gender", gender);
-    if (image) {
-        data.append("file", image);
-    }
+    data.append("image", image);
+    // if (image) {
+    //     data.append("file", image);
+    // }
 
     axios
         .post(backendURL+"signup", data, {

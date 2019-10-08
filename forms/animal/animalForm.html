@@ -16,9 +16,9 @@
                     src="../../images/logo3.png" /></a></h1>
             <nav class="main__header__nav">
                 <ul class="main__header__ul">
-                    <li class="main__header__li"><a href="../../cases/animal/allCases/allCases.html" class="main__header__a">الحالات </a></li>
-                    <li class="main__header__li"><a href="../../index/human/index.html" class="main__header__a">رعاية الإنسان</a></li>
-                    <li class="main__header__li"><a href="../../index/animal/index.html" class="main__header__a">رعاية الحيوان</a></li>
+                    <li class="main__header__li"><a href="../../allCases/animalAllCases/allCases.html" class="main__header__a">الحالات </a></li>
+                    <li class="main__header__li"><a href="../../index/human/index.html" id="human" class="main__header__a">رعاية الإنسان</a></li>
+                    <li class="main__header__li"><a href="../../index/animal/index.html" id="animal" class="main__header__a">رعاية الحيوان</a></li>
                     <li class="main__header__li"><a href="../login/login.html" class="main__header__a"> <i
                                 class="fas fa-sign-in-alt"></i></a></li>
                 </ul>
@@ -45,7 +45,8 @@
                     <textarea rows="10" name="description" id="description" required></textarea>
                 </label>
                 <label>رقم تليفون*<input type="tel" name="mobile-number" id="mobile-number" /></label>
-                <label class="image">صورة الحالة*<input type="file" name="image" id="image" class="image"/></label>
+                <label>لينك الصورة*<input type="url" name="image" id="image" /></label>
+                <!-- <label class="image">صورة الحالة*<input type="file" name="image" id="image" class="image"/></label> -->
                 <button type="submit" class="btn">حفظ</button>
             </form>
         </div>
@@ -63,6 +64,7 @@
         </footer>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="../../util/localStorage.js"></script>
+        <script src="../../util/functions.js"></script>
         <script src="animalForm.js"></script>
     </body>
 </html>

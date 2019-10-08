@@ -28,6 +28,7 @@ form.addEventListener("submit", (e) => {
     const uniqueSign = document.getElementById('unique-sign').value
     const description = document.getElementById('description').value
     const mobileNumber = document.getElementById('mobile-number').value
+    const image = document.getElementById('image').value
     const lat = userLocation.lat;
     const lng = userLocation.lng;
     const userId = user.id;
@@ -42,9 +43,10 @@ form.addEventListener("submit", (e) => {
     data.append("lat", lat);
     data.append("lng", lng);
     data.append("userId", userId);
-    if (image) {
-        data.append("file", image);
-    }
+    data.append("image", image);
+    // if (image) {
+    //     data.append("file", image);
+    // }
 
     axios
         .post(`${backendURL}addCase?caseType=animal`, data, {

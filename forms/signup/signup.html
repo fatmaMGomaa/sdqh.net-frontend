@@ -19,8 +19,8 @@
                 <ul class="main__header__ul">
                     <li class="main__header__li"><a href="../login/login.html" class="main__header__a"> <i
                                 class="fas fa-sign-in-alt"></i> الدخول</a></li>
-                    <li class="main__header__li"><a href="../../index/human/index.html" class="main__header__a">رعاية الإنسان</a></li>
-                    <li class="main__header__li"><a href="../../index/animal/index.html" class="main__header__a">رعاية الحيوان</a></li>
+                    <li class="main__header__li"><a href="../../index/human/index.html" id="human" class="main__header__a">رعاية الإنسان</a></li>
+                    <li class="main__header__li"><a href="../../index/animal/index.html" id="animal" class="main__header__a">رعاية الحيوان</a></li>
                 </ul>
             </nav>
         </header>
@@ -50,7 +50,8 @@
                     <div class="inner"><label>تاريخ الميلاد: <input type="date" name="birthdate" id="birthdate" required /></label></div>
                 </div>
                 <div class="outer">
-                    <label>صورة*<input type="file" name="image" id="image" class="image"/></label>
+                    <label>لينك الصورة*<input type="url" name="image" id="image"/></label>
+                    <!-- <label>صورة*<input type="file" name="image" id="image" class="image"/></label> -->
                 </div>
                 <button type="submit" class="btn">إنشاء حساب جديد</button>
             </form>
@@ -68,6 +69,7 @@
         </footer>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="../../util/localStorage.js"></script>
+        <script src="../../util/functions.js"></script>
         <script src="signup.js"></script>
     </body>
 </html>
