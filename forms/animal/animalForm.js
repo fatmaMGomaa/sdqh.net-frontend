@@ -9,16 +9,16 @@ if (!user || !token) {
     window.location.replace(baseURL + "/forms/login/login.html");
 }
 if (!userLocation) {
-    alert("you have to turn on yor GPS to know your current location")
+    alert("you have to turn on your GPS to know your current location")
     window.location.replace(baseURL + "/index/animal/index.html");
 }
 
 let data, image;
 const form = document.getElementById('animal')
-const imageFile = document.getElementById('image')
-imageFile.addEventListener("change", (e) => {
-    image = e.target.files[0]
-})
+// const imageFile = document.getElementById('image')
+// imageFile.addEventListener("change", (e) => {
+//     image = e.target.files[0]
+// })
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -64,6 +64,6 @@ form.addEventListener("submit", (e) => {
         })
         .catch(function (error) {
             console.log(error);
-            alert(error.response.data.message)
+            alert(error.response.message)
         });
 })

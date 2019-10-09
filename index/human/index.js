@@ -59,7 +59,7 @@ const mapWithMarkers = function initMap() {
                 caseId = this.get("id");
                 saveToLocalStorage("caseId", caseId)
                 saveToLocalStorage("caseType", "human")
-                window.location.replace(baseURL + `/cases/human/singleCase/singleCase.html`);
+                window.location.replace(baseURL + `/singleCase/singleCase.html`);
             }); 
         }
     }

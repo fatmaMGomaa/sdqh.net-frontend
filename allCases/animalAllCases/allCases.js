@@ -45,7 +45,7 @@ axios
                     console.log(caseId)
                     saveToLocalStorage("caseId", caseId)
                     saveToLocalStorage("caseType", "animal")
-                    window.location.replace(baseURL + `/cases/animal/singleCase/singleCase.html`);
+                    window.location.replace(baseURL + `/singleCase/animalSingleCase/singleCase.html`);
                 })
             })
         }

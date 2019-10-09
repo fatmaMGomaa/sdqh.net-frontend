@@ -1,5 +1,4 @@
 const token = getLocalStorageItem("token");
-const caseType = getLocalStorageItem("caseType");
 const baseURL = "https://sdqh-net.netlify.com";
 const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 let cases = [];
@@ -11,7 +10,7 @@ const filters = {
 
 const container = document.querySelector('.container')
 axios
-    .get(`${backendURL}allCases?caseType=${caseType}`, {
+    .get(`${backendURL}allCases?caseType=human`, {
         headers: {
             Authorization: `bearer ${token}`
         }
@@ -29,11 +28,11 @@ axios
                 div.className = "content";
                 div.innerHTML =
                 `<div class="right">
-                    <img src=${cases[i]["image"]} alt=${cases[i]["name"] || cases[i]["species"]} />
+                    <img src=${cases[i]["image"]} alt=${cases[i]["name"]} />
                 </div>
                 <div class="left">
                     <div class="top">
-                        <h2>${ cases[i]["name"] || cases[i]["species"]}</h2>
+                        <h2>${ cases[i]["name"]}</h2>
                         <p class="date"><i class="far fa-clock"></i> <time>${ cases[i]["createdAt"].split('T')[0]}</time>، <i class="fas fa-map-marker-alt"></i> ${cases[i]["area"]}</p>
                     </div>
                     <div class="middle">
@@ -51,11 +50,8 @@ axios
                     caseId = e.target.id
                     console.log(caseId)
                     saveToLocalStorage("caseId", caseId)
-                    if(caseType === "human"){
-                        window.location.replace(baseURL + `/singleCase/singleCase.html`);
-                    } else if (caseType === "animal"){
-                        window.location.replace(baseURL + `singleCase/animalSingleCase/singleCase.html`);
-                    }
+                    saveToLocalStorage("caseType", "human");
+                    window.location.replace(baseURL + `/singleCase/singleCase.html`);
                 })
             })
         }

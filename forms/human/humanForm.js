@@ -15,10 +15,10 @@ if (!userLocation) {
 
 let data, image;
 const form = document.getElementById('human')
-const imageFile = document.getElementById('image')
-imageFile.addEventListener("change", (e) => {
-    image = e.target.files[0]
-})
+// const imageFile = document.getElementById('image')
+// imageFile.addEventListener("change", (e) => {
+//     image = e.target.files[0]
+// })
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -65,6 +65,5 @@ form.addEventListener("submit", (e) => {
         .catch(function (error) {
             console.log(error);
             alert(error.response.message)
-            window.location.replace(baseURL + "/forms/login/login.html");
         });
 })
