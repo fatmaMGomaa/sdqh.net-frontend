@@ -1,6 +1,3 @@
-const token = getLocalStorageItem("token");
-const baseURL = "https://sdqh-net.netlify.com";
-const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 let cases = [];
 var map, infoWindow;
 

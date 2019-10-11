@@ -1,5 +1,3 @@
-const baseURL = "https://sdqh-net.netlify.com";
-const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 const form = document.getElementById('login')
 let data;
 

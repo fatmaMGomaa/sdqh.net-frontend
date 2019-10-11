@@ -14,7 +14,7 @@
 <body>
     <header class="main__header">
         <h1 class="main__header__h1"><a href="../../landingPage/landing.html" class="main__header__a"><img
-                    src="../../../images/logo3.png" /></a></h1>
+                    src="../../images/logo3.png" /></a></h1>
         <nav class="main__header__nav">
             <ul class="main__header__ul">
                 <li class="main__header__li"><a href="../../forms/animal/animalForm.html" class="main__header__a"> <i
@@ -28,6 +28,19 @@
             </ul>
         </nav>
     </header>
+    <div class="user-search">
+        <div>
+            <label>بحث: <input type="search" id="search-text"></label>
+        </div>
+        <div class="user-fillters">
+            <ul class="filter">
+                <li><button type="button" class="filter__all">الكل</button></li>
+                <li><button type="button" class="filter__egypt">مصر</button></li>
+                <li><button type="button" class="filter__ksa">السعودية</button></li>
+                <li><button type="button" class="filter__uae">الإمارات</button></li>
+            </ul>
+        </div>
+    </div>
     <div class="container">
     </div>
     <footer class="main__footer">
@@ -43,6 +56,8 @@
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../../util/localStorage.js"></script>
+    <script src="../../util/general.js"></script>
+    <script src="../../util/functions.js"></script>
     <script src="allCases.js"></script>
 </body>
 

@@ -1,12 +1,4 @@
-const token = getLocalStorageItem("token");
-let caseId = getLocalStorageItem("caseId");
-const caseType = getLocalStorageItem("caseType");
-const user = getLocalStorageItem("user");
-
 let theCase, comments;
-const baseURL = "https://sdqh-net.netlify.com";
-const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
-
 const container = document.querySelector('.container');
 axios
     .get(`${backendURL}singleCase/${caseId}?caseType=${caseType}`, {
@@ -17,7 +9,6 @@ axios
     .then(response => {
         theCase = response.data.case;
         comments = theCase.comments;
-        console.log(comments);
         if (!theCase) {
             container.innerHTML = "<h1>لا يوجد حالة لعرضها</h1>"
         } else {

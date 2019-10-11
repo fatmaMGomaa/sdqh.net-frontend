@@ -1,8 +1,20 @@
 body{
     height: auto;
 }
-.user-fillters, .user-fillters ul, .container{
+.container, .user-search{
     margin: 0 auto;
+}
+.user-search, .content{
+    display: flex;
+    width: 80%;
+}
+.user-search{
+    justify-content: space-around;
+    align-content: center;
+}
+.user-search ul{
+    margin: 0;
+    padding: 0;
 }
 .user-fillters ul li, .bottom{
     display: inline-block;
@@ -11,24 +23,25 @@ body{
     width: 100px;
     height: 25px;
     outline: none;
-    margin: 0 -2px;
+    margin: 0 -1px;
     background-color: rgba(9, 64, 96, 1);
     color: white;
     border: none;
 }
+.user-fillters li button:hover{
+    background-color: #2196f3;
+}
 .filter__uae{
     border-radius: 20px 0 0 20px;
 }
-.filter__egypt{
+.filter__all{
     border-radius: 0 20px 20px 0;
 }
 .container {
     width: 90%;
 }
 .content {
-    width: 80%;
     padding: 10px;
-    display: flex;
     justify-content: center;
     margin: 10px auto;
     background-color: #f5f5f5;

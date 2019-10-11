@@ -1,8 +1,4 @@
 const userLocation = getLocalStorageItem("location");
-const user = getLocalStorageItem("user");
-const token = getLocalStorageItem("token");
-const baseURL = "https://sdqh-net.netlify.com";
-const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 
 if (!user || !token) {
     alert("you have to log in first")

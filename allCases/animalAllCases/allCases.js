@@ -1,6 +1,3 @@
-const token = getLocalStorageItem("token");
-const baseURL = "https://sdqh-net.netlify.com";
-const backendURL = "https://shrouded-scrubland-71994.herokuapp.com/";
 let cases = [];
 const container = document.querySelector('.container')
 axios
@@ -12,45 +9,32 @@ axios
     .then(response => {
         cases = response.data.cases;
         console.log(cases);
-        if (cases.length === 0) {
-            container.innerHTML = "<h2>لا يوجد حالات لعرضها</h2>"
-        } else {
-            // let imagePath;
-            for (var i = 0; i < cases.length; i++) {
-                // imagePath = `${backendURL}${cases[i]["image"]}`
-                var div = document.createElement("div");
-                div.className = "content";
-                div.innerHTML =
-                    `<div class="right">
-                        <img src=${cases[i]["image"]} alt=${cases[i]["species"]} />
-                    </div>
-                    <div class="left">
-                        <div class="top">
-                            <h2>${ cases[i]["species"]}</h2>
-                            <p class="date">تم إضافته: <time>${ cases[i]["createdAt"].split('T')[0]}</time>، ${cases[i]["area"]}</p>
-                        </div>
-                        <div class="middle">
-                            <p>${ cases[i]["description"].substring(0, 120)}...</p>
-                        </div>
-                        <div class="bottom">
-                            <button type="button" id=${ cases[i]["id"]}>المزيد</button>
-                        </div>
-                    </div>`;
-                container.appendChild(div);
-            }
-            const casesButton = document.querySelectorAll('button')
-            casesButton.forEach((caseButton) => {
-                caseButton.addEventListener('click', (e) => {
-                    caseId = e.target.id
-                    console.log(caseId)
-                    saveToLocalStorage("caseId", caseId)
-                    saveToLocalStorage("caseType", "animal")
-                    window.location.replace(baseURL + `/singleCase/animalSingleCase/singleCase.html`);
-                })
-            })
-        }
+        renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
     })
     .catch(error => {
         console.log(error);
         alert("something went wrong")
     });
+document.querySelector('.filter__all').addEventListener('click', (e) => {
+    filters.filterBy = ''
+    renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
+})
+document.querySelector('.filter__egypt').addEventListener('click', (e) => {
+    filters.filterBy = 'مصر'
+    renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
+})
+
+document.querySelector('.filter__ksa').addEventListener('click', (e) => {
+    filters.filterBy = 'السعودية'
+    renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
+})
+
+document.querySelector('.filter__uae').addEventListener('click', (e) => {
+    filters.filterBy = 'الامارات'
+    renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
+})
+
+document.querySelector('#search-text').addEventListener('input', (e) => {
+    filters.searchText = e.target.value
+    renderingCases(cases, filters, "/singleCase/animalSingleCase/singleCase.html", "species")
+})
