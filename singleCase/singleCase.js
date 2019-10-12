@@ -54,7 +54,42 @@ axios
                 </div>
                 <div id="other-comments"></div>
             </div>`
-            
+            if (theCase.userId === user.id){
+                const topContainer = document.querySelector('.top');
+                var ordersDiv = document.createElement("div");
+                ordersDiv.className = "user-orders";
+                ordersDiv.innerHTML =
+                    `<div>
+                        <ul>
+                            <li id="edit"><i class="fas fa-pen"></i></li>
+                            <li id="delete"><i class="fas fa-trash-alt"></i></li>
+                        </ul>
+                    </div>`
+                topContainer.appendChild(ordersDiv);
+                const deleteButton = document.getElementById('delete')
+                deleteButton.addEventListener('click', (e) => {
+                    if(confirm("تأكيد مسح هذه الحالة")){
+                        axios
+                            .delete(`${backendURL}deleteCase/${theCase.id}/${theCase.userId}?caseType=${caseType}`, {
+                                headers: {
+                                    Authorization: `bearer ${token}`
+                                }
+                            })
+                            .then(response => {
+                                alert(response.data.message);
+                                if(caseType === "human"){
+                                    window.location.replace(baseURL + "/allCases/allCases.html");
+                                }else {
+                                    window.location.replace(baseURL + "/allCases/animalAllCases/allCases.html");
+                                }
+                            })
+                            .catch(error => {
+                                console.log(error);
+                                alert(error.response.data.message)
+                            });
+                    }
+                })
+            }
             const commentForm = document.querySelector('#comment-form');
             commentForm.addEventListener("submit", (e) => {
                 e.preventDefault();
@@ -110,6 +145,11 @@ axios
     })
     .catch(error => {
         console.log(error);
-        // alert(error.response.data.message)
+        if (error.response) {
+            alert(error.response.data.message)
+        } else {
+            alert("something went wrong")
+            window.location.replace(baseURL + "/landingpage/landing");
+        }
     });
 

@@ -60,6 +60,11 @@ form.addEventListener("submit", (e) => {
         })
         .catch(function (error) {
             console.log(error);
-            alert(error.response.message)
+            if (error.response) {
+                alert(error.response.data.message)
+            } else {
+                alert("something went wrong")
+                window.location.replace(baseURL + "/landingpage/landing");
+            }
         });
 })

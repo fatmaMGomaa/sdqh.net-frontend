@@ -15,14 +15,29 @@ body{
     border-bottom: 1px solid rgba(9, 64, 96, 1);
 }
 .content .right {
-    width: 30%;
+    width: 20%;
 }
 .content .right img{
     width: 95%;
     max-height: 300px;
 }
 .content .left {
-    width: 70%;
+    width: 80%;
+    position: relative;
+}
+.content .left .user-orders{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.content .left .user-orders li{
+    display: inline-block;
+}
+#delete{
+    color: red;
+}
+#edit{
+    color: #2196f3;
 }
 .content .left ul {
     list-style: none;
