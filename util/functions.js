@@ -1,17 +1,19 @@
-const humanCaseType = () => {
-    const humanCase = document.querySelector('#human')
-    if(humanCase){
-        humanCase.addEventListener('click', (e) => {
-            saveToLocalStorage("caseType", "human")
+const saveCaseType = (caseType, elementId) => {
+    const element = document.querySelector(elementId)
+    if(element){
+        element.addEventListener('click', (e) => {
+            saveToLocalStorage("caseType", caseType)
         })
     }
 }
 
-const animalCaseType = () => {
-    const animalCase = document.querySelector('#animal')
-    if(animalCase){
-        animalCase.addEventListener('click', (e) => {
-            saveToLocalStorage("caseType", "animal")
+const saveActionType = (actionType, elementId, editUrl) => {
+    const element = document.querySelector(elementId)
+    if (element) {
+        console.log("in edit function")
+        element.href = editUrl
+        element.addEventListener('click', (e) => {
+            saveToLocalStorage("actionType", actionType)
         })
     }
 }

@@ -36,6 +36,9 @@ body{
 #delete{
     color: red;
 }
+#delete:hover{
+    cursor: pointer;
+}
 #edit{
     color: #2196f3;
 }

@@ -1,5 +1,6 @@
 let theCase, comments;
 const container = document.querySelector('.container');
+
 axios
     .get(`${backendURL}singleCase/${caseId}?caseType=${caseType}`, {
         headers: {
@@ -61,11 +62,16 @@ axios
                 ordersDiv.innerHTML =
                     `<div>
                         <ul>
-                            <li id="edit"><i class="fas fa-pen"></i></li>
+                            <li><a href="" id="edit"><i class="fas fa-pen"></i></a></li>
                             <li id="delete"><i class="fas fa-trash-alt"></i></li>
                         </ul>
                     </div>`
                 topContainer.appendChild(ordersDiv);
+                if(caseType === "human"){
+                    saveActionType("edit", "#edit", `${baseURL}/forms/human/humanForm.html`)
+                } else if (caseType === "animal"){
+                    saveActionType("edit", "#edit", `${baseURL}/forms/animal/animalForm.html`)
+                }
                 const deleteButton = document.getElementById('delete')
                 deleteButton.addEventListener('click', (e) => {
                     if(confirm("تأكيد مسح هذه الحالة")){
