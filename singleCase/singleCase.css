@@ -39,7 +39,7 @@ body{
 #delete:hover{
     cursor: pointer;
 }
-#edit{
+#edit, .content a, .single-comment a{
     color: #2196f3;
 }
 .content .left ul {
@@ -93,9 +93,7 @@ body{
     font-size: 85%;
     color: rgna(0,0,0,0.8)
 }
-.single-comment span{
-    color: #2196f3;
-}
+
 @media screen and (max-width: 900px) {
     .container {
         margin: 10px auto 0;

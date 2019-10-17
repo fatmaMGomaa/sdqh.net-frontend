@@ -40,6 +40,8 @@ form.addEventListener("submit",(e)=>{
             localStorage.clear();
             saveToLocalStorage("token", data.token)
             saveToLocalStorage("user", data.user)
+            saveToLocalStorage("userId", data.user.id)
+            saveToLocalStorage("userProfile", data.user)
             window.location.replace(baseURL + "/landingPage/landing.html");
         })
         .catch(function (error) {

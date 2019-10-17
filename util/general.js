@@ -4,6 +4,8 @@ const token = getLocalStorageItem("token");
 let caseId = getLocalStorageItem("caseId");
 let caseType = getLocalStorageItem("caseType");
 let user = getLocalStorageItem("user");
+let userId = getLocalStorageItem("userId");
+let userProfile = getLocalStorageItem("userProfile");
 const filters = {
     searchText: '',
     filterBy: ''

@@ -1,0 +1,18 @@
+#user-info{
+    width: 25%;
+}
+#user-info img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+}
+#user-info, #user-info img{
+    margin: 0 auto;
+}
+#user-info h2{
+    text-align: center;
+}
+#edit{
+    color: #2196f3;
+}

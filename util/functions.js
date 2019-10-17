@@ -10,7 +10,6 @@ const saveCaseType = (caseType, elementId) => {
 const saveActionType = (actionType, elementId, editUrl) => {
     const element = document.querySelector(elementId)
     if (element) {
-        console.log("in edit function")
         element.href = editUrl
         element.addEventListener('click', (e) => {
             saveToLocalStorage("actionType", actionType)
@@ -18,7 +17,8 @@ const saveActionType = (actionType, elementId, editUrl) => {
     }
 }
 
-const generateCasesDom = (cases,pageUrl) => {
+const generateCasesDom = (cases,pageUrl, containerName) => {
+    const container = document.querySelector(containerName)
     if (cases.length === 0) {
         container.innerHTML = "<h2>لا يوجد حالات لعرضها</h2>"
     } else {
@@ -45,7 +45,7 @@ const generateCasesDom = (cases,pageUrl) => {
                  </div>`;
             container.appendChild(div);
         }
-        const casesButton = document.querySelectorAll('.case-button')
+        const casesButton = document.querySelectorAll(`${containerName} .case-button`)
         casesButton.forEach((caseButton) => {
             caseButton.addEventListener('click', (e) => {
                 caseId = e.target.id
@@ -62,9 +62,10 @@ const generateCasesDom = (cases,pageUrl) => {
     }
 }
 
-const renderingCases = (casesArray, filters, pageUrl, key) => {
+const renderingCases = (casesArray, filters, pageUrl, key, containerName) => {
+    const container = document.querySelector(containerName)
     let filteredCases = casesArray.filter((caseItem) => filters.filterBy !== '' ? caseItem.area === filters.filterBy : casesArray)
     filteredCases = filteredCases.filter((caseItem) => caseItem[key].toLowerCase().includes(filters.searchText.toLowerCase()))    
     container.innerHTML = ''
-    generateCasesDom(filteredCases, pageUrl)
+    generateCasesDom(filteredCases, pageUrl, containerName)
 }

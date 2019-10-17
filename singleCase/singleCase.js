@@ -9,6 +9,7 @@ axios
     })
     .then(response => {
         theCase = response.data.case;
+        console.log(theCase)
         comments = theCase.comments;
         if (!theCase) {
             container.innerHTML = "<h1>لا يوجد حالة لعرضها</h1>"
@@ -38,7 +39,7 @@ axios
                     <div class="bottom">
                         <ul>
                             <li><i class="fas fa-phone"></i> رقم التليفون: ${ theCase["phone"]}</li>
-                            <li><i class="fas fa-user"></i> فاعل الخير: ${ theCase["user"]["firstName"]} ${theCase["user"]["lastName"]}</li>
+                            <li><i class="fas fa-user"></i> فاعل الخير: <a href=${baseURL + "/userProfile/userProfile.html"} id="user-of-case">${ theCase["user"]["firstName"]} ${theCase["user"]["lastName"]}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,6 +56,11 @@ axios
                 </div>
                 <div id="other-comments"></div>
             </div>`
+            const caseUser = document.getElementById('user-of-case')
+            caseUser.addEventListener('click', (e) => {
+                saveToLocalStorage("userProfile", theCase.user)
+                saveToLocalStorage("userId", theCase.userId)
+            })
             if (theCase.userId === user.id){
                 const topContainer = document.querySelector('.top');
                 var ordersDiv = document.createElement("div");
@@ -129,23 +135,38 @@ axios
             })
             
             if (comments.length > 0) {
-                const caseComments = document.querySelector('#other-comments')
+                const caseComments = document.querySelector('#other-comments');
+                let commentUser
                 // let commentImage;
                 for (var i = 0; i < comments.length; i++){
                     // commentImage = `${backendURL}${comments[i]['user']['image']}`;
-                    var commentDiv = document.createElement("div");
+                    var commentDiv = document.createElement("section");
                     commentDiv.className = "single-comment";
+                    commentDiv.setAttribute("id", comments[i]["id"])
                     commentDiv.innerHTML =
                         `<div class="comment-left">
-                            <img src=${comments[i]['user']['image']} alt=${comments[i]['user']['firstName']} />
+                            <a class="comment-user" href=${baseURL + "/userProfile/userProfile.html"}><img src=${comments[i]['user']['image']} alt=${comments[i]['user']['firstName']} /></a>
                         </div>
                         <div class="comment-right">
-                            <p><span>${comments[i]['user']['firstName']}:</span>   ${comments[i]['content']}</p>
+                            <p><a class="comment-user" href=${baseURL + "/userProfile/userProfile.html"}>${comments[i]['user']['firstName']}:</a>   ${comments[i]['content']}</p>
                             <p><i class="far fa-clock"></i> <time>${comments[i]["createdAt"].split('T')[0]}</time></p>
                         </div>`
 
                     caseComments.appendChild(commentDiv);
+                    commentUser = document.querySelectorAll(".comment-user")
+                    commentUser.forEach((userInfo) => {
+                        userInfo.addEventListener('click', (e) => {
+                            comments.forEach(item => {
+                                if(item.id === +userInfo.closest("section").getAttribute('id')){
+                                    saveToLocalStorage("userProfile", item["user"])
+                                    saveToLocalStorage("userId", item["user"]["id"])
+                                }
+                            })
+                            
+                        })
+                    })
                 }
+                
             }
         }
     })

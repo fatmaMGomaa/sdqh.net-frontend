@@ -26,8 +26,10 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.main__header__a{
+a{
     text-decoration: none;
+}
+.main__header__a{
     color: rgba(9, 64, 96, 1);
 }
 .main__header__a:hover,.main__footer i:hover{
