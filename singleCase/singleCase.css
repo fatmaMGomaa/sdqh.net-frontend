@@ -12,7 +12,7 @@ body{
     justify-content: center;
 }
 .content, .single-comment{
-    border-bottom: 1px solid rgba(9, 64, 96, 1);
+    border-bottom: 1px solid #20333e;
 }
 .content .right {
     width: 20%;
@@ -42,6 +42,9 @@ body{
 #edit, .content a, .single-comment a{
     color: #2196f3;
 }
+.content a:hover, .fa-clock{
+    color:#e65138;
+}
 .content .left ul {
     list-style: none;
     padding: 0;
@@ -49,6 +52,9 @@ body{
 .content .left i{
     margin: 0  0 5px 15px;
     font-size: 120%;
+}
+.left .top .fa-clock{
+    margin: 0  0 5px 0;
 }
 .content .date {
     margin-top: -20px;

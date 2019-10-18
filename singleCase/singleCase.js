@@ -61,7 +61,7 @@ axios
                 saveToLocalStorage("userProfile", theCase.user)
                 saveToLocalStorage("userId", theCase.userId)
             })
-            if (theCase.userId === user.id){
+            if (user && theCase.userId === user.id){
                 const topContainer = document.querySelector('.top');
                 var ordersDiv = document.createElement("div");
                 ordersDiv.className = "user-orders";

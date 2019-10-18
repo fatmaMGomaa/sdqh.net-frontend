@@ -7,6 +7,11 @@ html, body {
 .main__header a{
     color: white;
 }
+.main__header__li{
+    display: inline-block;
+    padding: 0 7px;
+    font-weight: 600;
+}
 .intro{
     background: url(cover.jpg) no-repeat 50% 50%;
     top: 0;
@@ -66,6 +71,11 @@ html, body {
 }
 /*--- Media Queries --*/
 @media screen and (max-width: 900px) {
+    
+    .main__header__li{
+        padding: 0 3px;
+        font-size: 85%;
+    }
     .content {
        margin-top: 39%;
     }
@@ -82,6 +92,12 @@ html, body {
     }
 }
 @media screen and (max-width: 767px) {
+    .main__header{
+        margin: 0;
+    }
+    .main__header__li{
+        font-size: 70%;
+    }
     .content {
         width: 300px;
         margin-top: 50%;

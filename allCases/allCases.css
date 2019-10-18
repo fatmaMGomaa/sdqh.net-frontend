@@ -24,7 +24,7 @@ body{
     height: 25px;
     outline: none;
     margin: 0 -1px;
-    background-color: rgba(9, 64, 96, 1);
+    background-color: #20333e;
     color: white;
     border: none;
 }
@@ -65,6 +65,9 @@ body{
 }
 .date {
     margin-top: -15px;
+}
+.top i{
+    color:#e65138;
 }
 .bottom button {
     position: absolute;

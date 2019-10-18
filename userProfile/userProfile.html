@@ -17,22 +17,40 @@
     <header class="main__header">
         <h1 class="main__header__h1"><a href="../landingPage/landing.html" class="main__header__a"><img
                     src="../images/logo3.png" /></a></h1>
-        <nav class="main__header__nav">
-            <ul class="main__header__ul">
-                <li class="main__header__li"><a href="../forms/human/humanForm.html" class="main__header__a"> <i
-                            class="fas fa-plus"></i> مساعدة جديدة</a> </li>
-                <li class="main__header__li"><a href="../allCases/allCases.html" class="main__header__a">الحالات</a>
-                </li>
-                <li class="main__header__li"><a href="../index/human/index.html" id="human"
-                        class="main__header__a">رعاية
-                        الإنسان</a></li>
-                <li class="main__header__li"><a href="../index/animal/index.html" id="animal"
-                        class="main__header__a">رعاية
-                        الحيوان</a></li>
-                <li class="main__header__li"><a href="../forms/login/login.html" class="main__header__a"> <i
-                            class="fas fa-sign-in-alt"></i></a></li>
-            </ul>
-        </nav>
+        <div>
+            <a href="../forms/login/login.html" class="main__header__menu"> <i class="fas fa-user"
+                    style="font-size:30px;cursor:pointer"></i></a>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <button class="dropdown-btn">رعاية الإنسان
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="../forms/human/humanForm.html" class="main__header__a"> <i class="fas fa-plus"></i> مساعدة
+                        جديدة</a>
+                    <a href="../index/human/index.html" class="main__header__a">الخريظة</a>
+                    <a href="../allCases/allCases.html" class="main__header__a">الحالات</a>
+                </div>
+                <button class="dropdown-btn">رعاية الحيوان
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="../forms/animal/animalForm.html" class="main__header__a"> <i class="fas fa-plus"></i> مساعدة
+                        جديدة</a>
+                    <a href="../index/animal/index.html" class="main__header__a">الخريظة</a>
+                    <a href="../allCases/animalAllCases/allCases.html" id="animal" class="main__header__a">الحالات</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-youtube-square"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <i class="fas fa-bars main__header__menu" onclick="openNav()"></i>
+        </div>
     </header>
     <div class="wrapper">
         <div id="user-info">
@@ -44,14 +62,6 @@
     </div>
     <footer class="main__footer">
         <p>جميع حقوق الطبع محفوظة © 2019</p>
-        <nav>
-            <ul>
-                <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                <li><a href=""><i class="fab fa-youtube-square"></i></a></li>
-            </ul>
-        </nav>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../util/localStorage.js"></script>
