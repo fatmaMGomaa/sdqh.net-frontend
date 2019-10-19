@@ -4,6 +4,9 @@ html, body {
     height: 100%;
     width: 100%;
 }
+.main__header{
+    border-bottom: none;
+}
 .main__header a{
     color: white;
 }
