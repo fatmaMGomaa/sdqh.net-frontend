@@ -50,20 +50,22 @@
             <i class="fas fa-bars main__header__menu" onclick="openNav()"></i>
         </div>
     </header>
-    <div class="user-search">
-        <div>
-            <label>بحث: <input type="search" id="search-text"></label>
+    <div class="wrapper">
+        <div class="user-search">
+            <div>
+                <label>بحث: <input type="search" id="search-text"></label>
+            </div>
+            <div class="user-fillters">
+                <ul class="filter">
+                    <li><button type="button" class="filter__all filter__item active">الكل</button></li>
+                    <li><button type="button" class="filter__egypt filter__item">مصر</button></li>
+                    <li><button type="button" class="filter__ksa filter__item">السعودية</button></li>
+                    <li><button type="button" class="filter__uae filter__item">الإمارات</button></li>
+                </ul>
+            </div>
         </div>
-        <div class="user-fillters">
-            <ul class="filter">
-                <li><button type="button" class="filter__all">الكل</button></li>
-                <li><button type="button" class="filter__egypt">مصر</button></li>
-                <li><button type="button" class="filter__ksa">السعودية</button></li>
-                <li><button type="button" class="filter__uae">الإمارات</button></li>
-            </ul>
-        </div>
+        <div class="container"></div>
     </div>
-    <div class="container">
     </div>
     <footer class="main__footer">
         <div class="nav-footer-col">

@@ -6,6 +6,12 @@ const saveCaseType = (caseType, elementId) => {
         })
     }
 }
+function removeActiveClass() {
+    let filterItems = document.getElementsByClassName("filter__item");
+    for (var i = 0; i < filterItems.length; i++) {
+        filterItems[i].classList.remove("active");
+    }
+}
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
