@@ -36,8 +36,20 @@
                         <a href="../../index/animal/index.html" class="main__header__a">الخريظة</a>
                         <a href="../../allCases/animalAllCases/allCases.html" id="animal" class="main__header__a">الحالات</a>
                     </div>
-                    <a href="../signup/signup.html" class="main__header__a"><i class="fas fa-user-plus"> حساب جديد</i></a>
-                    <a href="../../forms/login/login.html" class="main__header__a" id="signout"> <i class="fas fa-sign-in-alt"></i> خروج</a>
+                    <button class="dropdown-btn" id="register">التسجيل بالموقع<i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a href="../../forms/login/login.html" class="main__header__a"><i class="fas fa-sign-in-alt"></i> الدخول</a>
+                        <a href="../../forms/signup/signup.html" class="main__header__a"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                    </div>
+                    <button class="dropdown-btn" id="my-account">حسابي<i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a href="../../userProfile/userProfile.html" class="main__header__a" id="myPage"><i class="fas fa-user"></i> صفجتي
+                            الشخصية</a>
+                        <a href="../../forms/login/login.html" class="main__header__a" id="signout"> <i class="fas fa-sign-in-alt"></i>
+                            خروج</a>
+                    </div>
                     <nav>
                         <ul>
                             <li><a href=""><i class="fab fa-facebook"></i></a></li>
@@ -50,6 +62,10 @@
                 <i class="fas fa-bars main__header__menu" onclick="openNav()"></i>
             </div>
         </header>
+        <ul class="breadcrumb">
+            <li><a href="../../landingPage/landing.html">الرئيسية</a></li>
+            <li>الدخول</li>
+        </ul>
         <div class="container">
             <form action="/url" method="POST" name="login" id="login">
                 <label>الإيميل: <input type="email" name="email" id="email" required/></label>

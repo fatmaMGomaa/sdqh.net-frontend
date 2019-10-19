@@ -15,8 +15,7 @@
             <h1 class="main__header__h1"><a href="../../landingPage/landing.html" class="main__header__a"><img
                         src="../../images/logo3.png" /></a></h1>
             <div>
-                <a href="../../forms/login/login.html" class="main__header__menu"> <i class="fas fa-user"
-                        style="font-size:30px;cursor:pointer"></i></a>
+                <a href="../../forms/animal/animalForm.html" class="add"> <i class="fas fa-plus"></i> مساعدةجديدة</a>
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <button class="dropdown-btn">رعاية الإنسان
@@ -37,6 +36,20 @@
                         <a href="../../index/animal/index.html" class="main__header__a">الخريظة</a>
                         <a href="../../allCases/animalAllCases/allCases.html" id="animal" class="main__header__a">الحالات</a>
                     </div>
+                    <button class="dropdown-btn" id="register">التسجيل بالموقع<i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a href="../../forms/login/login.html" class="main__header__a"><i class="fas fa-sign-in-alt"></i> الدخول</a>
+                        <a href="../../forms/signup/signup.html" class="main__header__a"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                    </div>
+                    <button class="dropdown-btn" id="my-account">حسابي<i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a href="../../userProfile/userProfile.html" class="main__header__a" id="myPage"><i class="fas fa-user"></i> صفجتي
+                            الشخصية</a>
+                        <a href="../../forms/login/login.html" class="main__header__a" id="signout"> <i class="fas fa-sign-in-alt"></i>
+                            خروج</a>
+                    </div>
                     <nav>
                         <ul>
                             <li><a href=""><i class="fab fa-facebook"></i></a></li>
@@ -49,6 +62,12 @@
                 <i class="fas fa-bars main__header__menu" onclick="openNav()"></i>
             </div>
         </header>
+        <ul class="breadcrumb">
+            <li><a href="../../landingPage/landing.html">الرئيسية</a></li>
+            <li><a href="../../index/animal/index.html">الخريطة</a></li>
+            <li><a href="../../allCases/animalAllCases/allCases.html">الحالات</a></li>
+            <li>أضافة مساعدة جديدة</li>
+        </ul>
         <div class="container">
             <form  method="POST" name="animal" id="animal">
                 <label>نوع الحيوان: <input type="text" name="name" id="name" required/></label>

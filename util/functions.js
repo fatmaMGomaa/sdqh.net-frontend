@@ -93,3 +93,21 @@ const renderingCases = (casesArray, filters, pageUrl, key, containerName) => {
     container.innerHTML = ''
     generateCasesDom(filteredCases, pageUrl, containerName)
 }
+const signoutButton = document.querySelector('#signout');
+signoutButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    removeLocalStorageItem('user');
+    removeLocalStorageItem('token');
+    alert('you have signed out successfully')
+    window.location.replace(baseURL + "/landingPage/landing.html");
+})
+
+if(user && token){
+    document.getElementById("register").style.display = "none";
+}else{
+    document.getElementById("my-account").style.display = "none";
+}
+document.getElementById("myPage").addEventListener('click', (e) => {
+    saveToLocalStorage("userProfile", user)
+    saveToLocalStorage("userId", user.id)
+})

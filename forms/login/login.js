@@ -24,11 +24,3 @@ form.addEventListener("submit", (e) => {
             alert(error.response.data.message)
         });
 })
-const signoutButton = document.querySelector('#signout');
-signoutButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    removeLocalStorageItem('user');
-    removeLocalStorageItem('token');
-    alert('you have signed out successfully')
-    window.location.replace(baseURL + "/landingPage/landing.html");
-})
