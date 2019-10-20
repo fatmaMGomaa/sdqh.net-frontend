@@ -43,7 +43,7 @@ const saveActionType = (actionType, elementId, editUrl) => {
 
 const generateCasesDom = (cases,pageUrl, containerName) => {
     const container = document.querySelector(containerName)
-    if (cases.length === 0) {
+    if (cases.length === 0 && containerName === ".container") {
         container.innerHTML = "<h2>لا يوجد حالات لعرضها</h2>"
     } else {
         // let imagePath;
