@@ -8,7 +8,8 @@ userImage.src = userProfile.image;
 const userName = document.querySelector("#user-info h2");
 
 if(user.id === userId){
-    userName.innerHTML = `${userProfile.firstName} ${userProfile.lastName} <a href="" id="edit"><i class="fas fa-pen"></i></a>`
+    userName.innerHTML = `${userProfile.firstName} ${userProfile.lastName} <a href="" id="edit"><i class="fas fa-pen"></i></a>`;
+    saveActionType("edit", "#edit", `${baseURL}/forms/signup/signup.html`)
 }else {
     userName.innerHTML = `${userProfile.firstName} ${userProfile.lastName} `
 }

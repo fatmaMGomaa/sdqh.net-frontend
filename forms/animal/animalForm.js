@@ -96,36 +96,36 @@ form.addEventListener("submit", (e) => {
                 }
             });
     } else {
-    data.append("lat", lat);
-    data.append("lng", lng);
-    data.append("userId", userId);
+        data.append("lat", lat);
+        data.append("lng", lng);
+        data.append("userId", userId);
 
-    // if (image) {
-    //     data.append("file", image);
-    // }
+        // if (image) {
+        //     data.append("file", image);
+        // }
 
-    axios
-        .post(`${backendURL}addCase?caseType=animal`, data, {
-            headers: {
-                accept: "application/json",
-                "Accept-Language": "en-US,en;q=0.8",
-                "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
-                Authorization: `bearer ${token}`
-            }
-        })
-        .then(function (response) {
-            data = response.data;
-            window.location.replace(baseURL + "/index/animal/index.html");
-            alert("Animal case was added successfully")
-        })
-        .catch(function (error) {
-            console.log(error);
-            if (error.response) {
-                alert(error.response.data.message)
-            } else {
-                alert("something went wrong")
-                window.location.replace(baseURL + "/landingpage/landing");
-            }
-        });
-    }
+        axios
+            .post(`${backendURL}addCase?caseType=animal`, data, {
+                headers: {
+                    accept: "application/json",
+                    "Accept-Language": "en-US,en;q=0.8",
+                    "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
+                    Authorization: `bearer ${token}`
+                }
+            })
+            .then(function (response) {
+                data = response.data;
+                window.location.replace(baseURL + "/index/animal/index.html");
+                alert("Animal case was added successfully")
+            })
+            .catch(function (error) {
+                console.log(error);
+                if (error.response) {
+                    alert(error.response.data.message)
+                } else {
+                    alert("something went wrong")
+                    window.location.replace(baseURL + "/landingpage/landing");
+                }
+            });
+        }
 })
