@@ -69,7 +69,7 @@
         </ul>
         <div class="container">
             <h2>إنشاء حساب جديد</h2>
-            <form method="POST" name="signup" id="signup">
+            <form method="POST" name="signup" id="signup" novalidate>
                 <div class="outer">
                     <div class="inner">
                         <label>الاسم الأول: <input type="text" name="firstName" id="firstName" required /></label>
@@ -80,6 +80,7 @@
                 </div>
                 <div class="outer"><label>الإيميل: <input type="email" name="email" id="email" required /></label></div>
                 <div class="outer"><label>كلمة المرور: <input type="password" name="password" id="password" required /></label></div>
+                <div class="outer" id="addNewPassword"><label>كلمة المرور الجديدة: <input type="password" name="newPassword" id="newPassword" required /></label></div>
                 <div class="outer">
                     <div class="inner">
                         <label>
@@ -96,7 +97,7 @@
                     <label>لينك الصورة*<input type="url" name="image" id="image"/></label>
                     <!-- <label>صورة*<input type="file" name="image" id="image" class="image"/></label> -->
                 </div>
-                <button type="submit" class="btn">إنشاء حساب جديد</button>
+                <button type="submit" id="add-edit-btn" class="btn">إنشاء حساب جديد</button>
             </form>
         </div>
         <footer class="main__footer">
