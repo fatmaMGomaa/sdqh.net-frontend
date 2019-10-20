@@ -4,6 +4,9 @@ form {
 .btn{
     margin-top: 30px;
 }
+.new{
+    color: #20333e;
+}
 @media screen and (max-width: 767px) {
     .container {
         padding: 0 0 0 30px;

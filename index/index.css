@@ -19,8 +19,10 @@ html, body, .main__header__menu{
 ul.breadcrumb, .sidenav, .main__footer{
   background-color: #20333e;
 }
-.add{
+.add, .active {
     background-color: #d57a5b;
+}
+.add{
     padding: 8px;
 }
 .add, .main__header__menu{
@@ -152,9 +154,6 @@ ul{
 
 .fa-caret-down {
   float: left;
-}
-.active {
-  background-color: #d57a5b;
 }
 ul.breadcrumb {
   padding: 10px 16px;

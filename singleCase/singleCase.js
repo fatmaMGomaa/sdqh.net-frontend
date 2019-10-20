@@ -14,6 +14,7 @@ axios
         if (!theCase) {
             container.innerHTML = "<h1>لا يوجد حالة لعرضها</h1>"
         } else {
+            document.querySelector('.breadcrumb li:last-child').textContent = `حالة ${theCase["name"] || theCase["species"]}`;
             // let imagePath = `${backendURL}${theCase.image}`;
             if (theCase["phone"] === "" || theCase["phone"]=== " "){
                 theCase["phone"] = "لا يوجد"

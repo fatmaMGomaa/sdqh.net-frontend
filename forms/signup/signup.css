@@ -20,6 +20,9 @@ h2 {
     text-align: center;
     padding-bottom: 20px;
 }
+.new{
+    color: #20333e;
+}
 @media screen and (max-width: 900px) {
     .container {
         width: 80%;
