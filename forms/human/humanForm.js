@@ -50,7 +50,7 @@ if (actionType === "edit") {
                 alert(error.response.data.message)
             } else {
                 alert("something went wrong")
-                window.location.replace(baseURL + "/landingpage/landing");
+                window.location.replace(baseURL + "/landingPage/landing.html");
             }
         });
     }
@@ -90,7 +90,7 @@ form.addEventListener("submit", (e) => {
                     alert(error.response.data.message)
                 } else {
                     alert("something went wrong")
-                    window.location.replace(baseURL + "/landingpage/landing");
+                    window.location.replace(baseURL + "/landingPage/landing.html");
                 }
             });
     }else {
@@ -121,7 +121,7 @@ form.addEventListener("submit", (e) => {
                     alert(error.response.data.message)
                 } else {
                     alert("something went wrong")
-                    window.location.replace(baseURL + "/landingpage/landing");
+                    window.location.replace(baseURL + "/landingPage/landing.html");
                 }
             });
     }
